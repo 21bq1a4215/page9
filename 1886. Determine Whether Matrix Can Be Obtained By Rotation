@@ -1,0 +1,9 @@
+class Solution:
+    def findRotation(self, mat: List[List[int]], target: List[List[int]]) -> bool:
+        def rotate(mat):
+            return [list(k)[::-1] for k in zip(*mat)]
+        for k in range(4):
+            if mat==target:return True
+            mat=rotate(mat)
+            
+        return False
